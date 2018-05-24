@@ -1,0 +1,5 @@
+*.DS_Store
+vendor
+App/Cache/*
+App/Configs/local.php
+_design

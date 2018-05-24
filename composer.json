@@ -1,0 +1,20 @@
+{
+    "name": "syaifulsz/sesimple-framework",
+    "license": "MIT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Syaiful Shah Zinan",
+            "email": "i.works@live.com",
+            "homepage": "https://github.com/syaifulsz/sesimple-framework"
+        }
+    ],
+    "require": {
+        "php": ">=7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        }
+    }
+}
