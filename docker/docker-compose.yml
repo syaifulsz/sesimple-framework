@@ -1,0 +1,9 @@
+version: '3'
+services:
+    sesimple:
+        container_name: sesimple
+        build: .
+        ports:
+            - "8888:80"
+        volumes:
+            - ./../../sesimple-framework:/var/www/sesimple-framework

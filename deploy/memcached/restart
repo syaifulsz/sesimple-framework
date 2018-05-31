@@ -1,0 +1,9 @@
+#!/bin/sh
+
+. $(dirname "$0")/../init.sh
+
+clear
+OCAK "$_OCAK_INTRO" "$_OCAK_OWN" "" "RUN COMMAND TO CONTAINER:" ">> $APP_NAME" "service memcached restart"
+BR
+
+docker exec -it $APP_CONTAINER service memcached restart

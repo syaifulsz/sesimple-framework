@@ -2,4 +2,7 @@
 vendor
 App/Cache/*
 App/Configs/local.php
-_design
+docker/data/mysql/*
+docker/data/mongodb/*
+.viminfo
+.bash_history

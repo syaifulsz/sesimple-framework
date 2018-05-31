@@ -1,0 +1,12 @@
+#!/bin/sh
+
+. $(dirname "$0")/init.sh
+
+clear
+DOCKER_DIR
+OCAK "$_OCAK_INTRO" "$_OCAK_OWN" "" "START CONTAINER:" ">> $APP_NAME" ">> $DB_NAME"
+BR
+pwd
+docker-compose up -d
+SLEEP1
+OCAK "COMMAND STOP CONTAINER:" "bash deploy/halt"

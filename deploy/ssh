@@ -1,0 +1,24 @@
+#!/bin/sh
+
+. $(dirname "$0")/init.sh
+
+clear
+DOCKER_DIR
+OCAK "$_OCAK_INTRO" "$_OCAK_OWN" "" "SSH TO CONTAINER:" ">> $APP_NAME"
+BR
+
+A=`docker exec -it $APP_CONTAINER echo OK`
+B=`echo $A`
+BR
+
+if [[ $B = *"OK"* ]]; then
+    masokBengko
+else
+    OCAK "$APP_NAME STATUS: NOT RUNNING" "" "BOOTING $APP_NAME" "" "START CONTAINER:" ">> $APP_NAME"
+    SLEEP2
+    docker-compose up -d
+    BR
+    OCAK "SSH TO CONTAINER:" ">> $APP_NAME"
+    SLEEP2
+    masokBengko
+fi

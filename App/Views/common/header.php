@@ -4,14 +4,13 @@ use App\Components\UrlHelper;
 
 $request_uri = explode('?', $_SERVER['REQUEST_URI'], 2);
 $is_home_page = ($request_uri[0] === '/');
-$is_movie_showtimes_page = (strpos(strtolower($request_uri[0]), 'movie-showtimes') !== false);
 $canonical_url = UrlHelper::base_url($request_uri[0]);
 
-$header_app_name = !empty($header['app_name']) ? $header['app_name'] : 'Tengok Wayang';
+$header_app_name = !empty($header['app_name']) ? $header['app_name'] : 'Sesimple Framework';
 $header_title = !empty($header['title']) ? $header['title'] .' - '. $header_app_name : $header_app_name;
 $header_description = !empty($header['description']) ? $header['description'] : $header_app_name;
 $header_keywords = !empty($header['keywords']) && is_array($header['keywords']) ? implode(',', $header['keywords']) : $header_app_name;
-$header_page_url = !empty($header['page_url']) ? $header['page_url'] : 'https://www.tengokwayang.com';
+$header_page_url = !empty($header['page_url']) ? $header['page_url'] : 'http://sesimple.local:8888';
 $header_fb_site_name = !empty($header['fb_site_name']) ? $header['fb_site_name'] : $header_title;
 $header_fb_image = !empty($header['fb_image']) ? $header['fb_image'] : null;
 $header_fb_type = !empty($header['fb_type']) ? $header['fb_type'] : 'Website';
@@ -45,7 +44,7 @@ $header_twitter_username = !empty($header['twitter_username']) ? $header['twitte
         <meta name="twitter:site" content="@<?= $header_twitter_username ?>" />
         <meta name="twitter:creator" content="@<?= $header_twitter_username ?>" />
     <?php endif ?>
-    <meta name="twitter:card" content="<?= $is_movie_showtimes_page ? 'summary_large_image' : 'summary' ?>" />
+    <meta name="twitter:card" content="summary" />
     <meta name="twitter:url" content="<?= $canonical_url ?>">
 
     <?php if ($header_fb_app_id) : ?>
