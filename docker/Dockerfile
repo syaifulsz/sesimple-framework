@@ -51,6 +51,9 @@ WORKDIR $HOME
 COPY    ./nginx/sites-enabled   /etc/nginx/sites-enabled
 COPY    ./nginx/conf-stacks     /etc/nginx/conf-stacks
 
+# php
+COPY    ./php/00-sesimple.ini         /etc/php/7.1/fpm/conf.d/00-sesimple.ini
+
 VOLUME  ./../../sesimple-framework /var/www/sesimple-framework
 
 # setup ports

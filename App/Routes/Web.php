@@ -2,6 +2,8 @@
 
 namespace App\Routes;
 
+use App\Controllers\Site as SiteController;
+
 class Web
 {
     public function __construct()
@@ -12,13 +14,12 @@ class Web
         switch (true) {
 
             case $this->isRoute('/'):
-                $controller = new App\Controllers\Site();
+                $controller = new SiteController();
                 $controller->index();
                 break;
 
             case $this->isRoute('/about-sesimple-framework'):
-
-                $controller = new App\Controllers\Site();
+                $controller = new SiteController();
                 $controller->staticPage('pages/about-us');
                 break;
 
